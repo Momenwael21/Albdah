@@ -1,0 +1,112 @@
+footer {
+  background-color: var(--main-background);
+  //   position: absolute;
+  //   bottom: 0;
+  width: 100%;
+  color: white;
+  padding-top: 60px;
+  .container {
+    .row {
+      & > div {
+        margin: 20px 0;
+      }
+    }
+  }
+  h4 {
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .quick-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .all-links {
+      display: flex;
+      justify-content: center;
+      ul {
+        &.first-links {
+          margin-left: 40px;
+        }
+        li {
+          padding: 5px 0;
+          a {
+            color: #c7c7c7;
+            transition: 0.2s all ease-in-out;
+            -webkit-transition: 0.2s all ease-in-out;
+            -moz-transition: 0.2s all ease-in-out;
+            -ms-transition: 0.2s all ease-in-out;
+            -o-transition: 0.2s all ease-in-out;
+            &:hover {
+              color: white;
+            }
+          }
+        }
+      }
+    }
+  }
+  .account-options {
+    h4 {
+      text-align: center;
+    }
+    ul {
+      li {
+        text-align: center;
+        padding: 5px 0;
+        a {
+          color: #c7c7c7;
+          transition: 0.2s all ease-in-out;
+          -webkit-transition: 0.2s all ease-in-out;
+          -moz-transition: 0.2s all ease-in-out;
+          -ms-transition: 0.2s all ease-in-out;
+          -o-transition: 0.2s all ease-in-out;
+          &:hover {
+            color: white;
+          }
+        }
+      }
+    }
+  }
+  .follow-us {
+    h4 {
+      text-align: center;
+    }
+    .icons {
+      display: flex;
+      justify-content: center;
+      ul {
+        display: flex;
+        justify-content: center;
+        padding: 0;
+        a {
+          margin: 0 10px;
+          width: 30px;
+          height: 30px;
+          color: var(--main-background);
+          background-color: white;
+          border-radius: 50%;
+          -webkit-border-radius: 50%;
+          -moz-border-radius: 50%;
+          -ms-border-radius: 50%;
+          -o-border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          svg {
+            font-size: 15px;
+          }
+        }
+      }
+    }
+  }
+  .copyright {
+    text-align: center;
+    padding: 20px 0;
+    color: #c7c7c7;
+    margin: 0;
+  }
+}
