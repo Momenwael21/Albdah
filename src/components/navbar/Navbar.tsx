@@ -97,7 +97,7 @@ const Navbar = () => {
               <p>{months[dt.getMonth()]}</p>
             </div>
             <div className="work-time">
-              <p>اوقات العمل : 8:00 ص - 12:00 م 4:00 م - 9:30 م</p>
+              <p>اوقات العمل : من الأحد للخميس من الساعة 8 للساعة 2:30</p>
               <AiOutlineFieldTime />
             </div>
           </div>

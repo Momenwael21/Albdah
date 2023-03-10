@@ -1,0 +1,101 @@
+@use "../../App.scss" as *;
+
+.contact-section {
+  padding-bottom: 80px;
+  .info-container {
+    position: relative;
+    .info {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      -webkit-transform: translateY(-50%);
+      -moz-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      -o-transform: translateY(-50%);
+      right: 60px;
+      min-width: 350px;
+      min-height: 350px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background-color: white;
+      border: 2px solid var(--main-background);
+      padding: 10px 25px;
+      @media (max-width: 768px) {
+        right: auto;
+        left: 0;
+        padding: 5px 10px;
+        font-size: 0.7em !important;
+        min-height: 300px;
+        min-width: 200px;
+      }
+      .details {
+        .title {
+          font-weight: bold;
+          margin-bottom: 35px;
+        }
+        p {
+          line-height: 1.8;
+          &.phone {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 20px 0;
+          }
+          & > svg {
+            margin-left: 5px;
+            font-weight: bold;
+            font-size: 18px;
+          }
+        }
+        .icons {
+          display: flex;
+          justify-content: center;
+          ul {
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            a {
+              margin: 0 10px;
+              width: 30px;
+              height: 30px;
+              color: white;
+              background-color: var(--main-background);
+              border-radius: 50%;
+              -webkit-border-radius: 50%;
+              -moz-border-radius: 50%;
+              -ms-border-radius: 50%;
+              -o-border-radius: 50%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              svg {
+                font-size: 15px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .container {
+    padding: 80px 0;
+    @media (max-width: 556px) {
+      padding: 80px 10px;
+    }
+    .title {
+      font-weight: bold;
+      margin-bottom: 30px;
+    }
+    @include formStyle();
+    .row {
+      width: 100%;
+
+      textarea {
+        resize: none;
+        height: 150px !important;
+      }
+    }
+  }
+}

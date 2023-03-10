@@ -11,7 +11,8 @@
         }
         input,
         select,
-        div[role="button"] {
+        div[role="button"],
+        textarea {
           padding: 10px 5px;
           border-radius: 5px;
           -webkit-border-radius: 5px;
@@ -50,4 +51,8 @@
       }
     }
   }
+}
+
+.root {
+  overflow-x: hidden;
 }
