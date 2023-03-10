@@ -38,7 +38,7 @@ const Contact = () => {
   //map loader
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
-    googleMapsApiKey: "AIzaSyA9nRlyNFMVrCNliPxJzoa_p7t5IsBR8MA",
+    googleMapsApiKey: "",
   });
   return (
     <>
