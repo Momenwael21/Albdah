@@ -20,3 +20,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   direction: rtl;
 }
+
+#root {
+  overflow-x: hidden;
+}

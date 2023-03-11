@@ -40,6 +40,7 @@ const Contact = () => {
     id: "google-map-script",
     googleMapsApiKey: "",
   });
+
   return (
     <>
       <section className="contact-section">

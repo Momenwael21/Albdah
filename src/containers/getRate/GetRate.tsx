@@ -1,7 +1,7 @@
 import { MenuItem, Select } from "@mui/material";
 import React, { useState } from "react";
 import Footer from "../../components/footer/Footer";
-import { ksaRegions, ksaCities, ksaDistricts } from "./ksaRegions";
+import { ksaRegions, ksaCities, ksaDistricts } from "../../ksaRegions";
 import "./getRate.scss";
 
 type formData = {
