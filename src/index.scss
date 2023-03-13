@@ -24,3 +24,32 @@ body {
 #root {
   overflow-x: hidden;
 }
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #191e32bf;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  transition: 0.2s all ease-in-out;
+  -webkit-transition: 0.2s all ease-in-out;
+  -moz-transition: 0.2s all ease-in-out;
+  -ms-transition: 0.2s all ease-in-out;
+  -o-transition: 0.2s all ease-in-out;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--main-background);
+}

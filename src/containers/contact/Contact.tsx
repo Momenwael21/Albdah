@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import Footer from "../../components/footer/Footer";
-import { GoogleMap, useJsApiLoader, Marker } from "@react-google-maps/api";
+import { GoogleMap, useJsApiLoader, MarkerF } from "@react-google-maps/api";
 import { GrLocation } from "react-icons/gr";
 import { BsTelephone, BsWhatsapp } from "react-icons/bs";
 import { FaFacebookF } from "react-icons/fa";
@@ -16,12 +16,13 @@ type contactData = {
 };
 
 const Contact = () => {
-  // let officeLocation = {
-  //   address:
-  //     "الشارع المركزي الشمالي، الصفراء، بريدة 52382، المملكة العربية السعودية",
-  //   lat: 26.366457438236516,
-  //   lng: 43.95395747377227,
-  // };
+  const center = useMemo(
+    () => ({
+      lat: 26.366467050971632,
+      lng: 43.95404330445937,
+    }),
+    []
+  );
 
   const [contactFormData, setContactFormData] = useState<contactData>({
     name: "",
@@ -51,11 +52,11 @@ const Contact = () => {
             ) : (
               <GoogleMap
                 mapContainerStyle={{ width: "100%", minHeight: "90vh" }}
-                zoom={9}
-                center={{ lat: -74, lng: 40.7 }}
+                zoom={11}
+                center={center}
                 mapContainerClassName="map-container"
               >
-                <Marker position={{ lat: -74, lng: 40.7 }} />
+                <MarkerF position={center} title={"البداح"} />
               </GoogleMap>
             )}
           </div>

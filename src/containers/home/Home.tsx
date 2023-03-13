@@ -1,10 +1,19 @@
 import { MenuItem, Select } from "@mui/material";
 import React, { useState } from "react";
 import { GrLocation } from "react-icons/gr";
-import { AiOutlineSearch } from "react-icons/ai";
-import Footer from "../../components/footer/Footer";
+import { GoLocation } from "react-icons/go";
+import { AiOutlineSearch, AiOutlineHeart } from "react-icons/ai";
+import { TfiClose } from "react-icons/tfi";
+import { BiLeftArrow } from "react-icons/bi";
+import {
+  MdOutlineShareLocation,
+  MdOutlineSpaceDashboard,
+} from "react-icons/md";
+import adImage from "../../assets/716ca55d-d1fa-4bfa-ad21-a9ea7e347b15.jpg";
 import "./home.scss";
-import { GoogleMap, useJsApiLoader } from "@react-google-maps/api";
+import { GoogleMap, useJsApiLoader, MarkerF } from "@react-google-maps/api";
+import { Link } from "react-router-dom";
+import { BsShare } from "react-icons/bs";
 
 type searchFilters = {
   type?: string;
@@ -31,6 +40,32 @@ const Home = () => {
         lang: position.coords.longitude,
       });
     });
+  };
+
+  const switchMapAds = (e: React.MouseEvent<HTMLElement>) => {
+    let switchBtn = document.querySelector(".switch-btn");
+    let map = document.querySelector(".map");
+    let ads = document.querySelector(".ads-col");
+
+    if (switchBtn?.classList.contains("ads-active")) {
+      switchBtn.children[1].innerHTML = "عرض العقارات";
+      switchBtn.classList.remove("ads-active");
+      switchBtn.classList.add("map-active");
+
+      map?.classList.remove("d-none");
+      map?.classList.add("d-block");
+      ads?.classList.remove("d-block");
+      ads?.classList.add("d-none");
+    } else if (switchBtn?.classList.contains("map-active")) {
+      switchBtn.children[1].innerHTML = "عرض الخريطة";
+      switchBtn?.classList.remove("map-active");
+      switchBtn?.classList.add("ads-active");
+
+      map?.classList.remove("d-block");
+      map?.classList.add("d-none");
+      ads?.classList.remove("d-none");
+      ads?.classList.add("d-block");
+    }
   };
 
   //handle map
@@ -98,6 +133,20 @@ const Home = () => {
               المزيد
             </button>
             <form className="advanced-search d-none">
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  document
+                    .querySelector(".advanced-search")
+                    ?.classList.remove("d-flex");
+                  document
+                    .querySelector(".advanced-search")
+                    ?.classList.add("d-none");
+                }}
+                className="close"
+              >
+                <TfiClose />
+              </button>
               <div className="row">
                 <div className="col-12">
                   <div className="build-type">
@@ -233,7 +282,7 @@ const Home = () => {
           </div>
         </div>
         <div className="row">
-          <div className="col-sm-12 col-lg-5">
+          <div className="col-sm-12 col-md-6 ads-col d-md-block">
             <div className="ads-container">
               <div className="order-by">
                 <Select
@@ -256,20 +305,146 @@ const Home = () => {
                 </Select>
                 <p className="result-number">عدد النتائج: 366</p>
               </div>
+              <div className="ads">
+                <div className="row">
+                  <div className="col-sm-12 col-lg-6">
+                    <div className="card">
+                      <div className="image">
+                        <img src={adImage} alt="adImage" />
+                      </div>
+                      <div className="content">
+                        <div className="title-details">
+                          <p className="title">شقة في الريان</p>
+                          <Link to={"./6"}>
+                            التفاصيل <BiLeftArrow />
+                          </Link>
+                        </div>
+                        <div className="location-price">
+                          <p className="location">
+                            <GoLocation /> الريان - بريدة
+                          </p>
+                          <p className="price">1,800 رس</p>
+                        </div>
+                        <div className="footer">
+                          <p>
+                            <MdOutlineSpaceDashboard fontSize={20} />
+                            {255}م
+                          </p>
+                          <div className="share-love">
+                            <button className="share">
+                              <BsShare />
+                            </button>
+                            <button className="favorite">
+                              <AiOutlineHeart />
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-sm-12 col-lg-6">
+                    <div className="card">
+                      <div className="image">
+                        <img src={adImage} alt="adImage" />
+                      </div>
+                      <div className="content">
+                        <div className="title-details">
+                          <p className="title">شقة في الريان</p>
+                          <Link to={"./6"}>
+                            التفاصيل <BiLeftArrow />
+                          </Link>
+                        </div>
+                        <div className="location-price">
+                          <p className="location">
+                            <GoLocation /> الريان - بريدة
+                          </p>
+                          <p className="price">1,800 رس</p>
+                        </div>
+                        <div className="footer">
+                          <p>
+                            <MdOutlineSpaceDashboard fontSize={20} />
+                            {255}م
+                          </p>
+                          <div className="share-love">
+                            <button className="share">
+                              <BsShare />
+                            </button>
+                            <button className="favorite">
+                              <AiOutlineHeart />
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-sm-12 col-lg-6">
+                    <div className="card">
+                      <div className="image">
+                        <img src={adImage} alt="adImage" />
+                      </div>
+                      <div className="content">
+                        <div className="title-details">
+                          <p className="title">شقة في الريان</p>
+                          <Link to={"./6"}>
+                            التفاصيل <BiLeftArrow />
+                          </Link>
+                        </div>
+                        <div className="location-price">
+                          <p className="location">
+                            <GoLocation /> الريان - بريدة
+                          </p>
+                          <p className="price">1,800 رس</p>
+                        </div>
+                        <div className="footer">
+                          <p>
+                            <MdOutlineSpaceDashboard fontSize={20} />
+                            {255}م
+                          </p>
+                          <div className="share-love">
+                            <button className="share">
+                              <BsShare />
+                            </button>
+                            <button className="favorite">
+                              <AiOutlineHeart />
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <div className="col-sm-12 col-lg-7">
+          <div className="col-sm-12 col-md-6 map d-none d-md-block">
             {isLoaded ? (
               <GoogleMap
-                center={{ lat: 74, lng: 60 }}
-                mapContainerStyle={{ width: "100%", height: "100%" }}
-                zoom={9}
+                center={{ lat: 26.366467050971632, lng: 43.95404330445937 }}
+                mapContainerStyle={{
+                  width: "100%",
+                  height: "100%",
+                  overflow: "hidden",
+                }}
+                zoom={12}
                 mapContainerClassName="map-container"
-              ></GoogleMap>
+              >
+                <MarkerF
+                  position={{
+                    lat: 26.366467050971632,
+                    lng: 43.95404330445937,
+                  }}
+                />
+              </GoogleMap>
             ) : (
               "Hello"
             )}
           </div>
+          <button
+            onClick={switchMapAds}
+            className="switch-btn ads-active d-sm-block d-md-none"
+          >
+            <MdOutlineShareLocation /> <span>عرض الخريطة</span>
+          </button>
         </div>
       </section>
     </>
